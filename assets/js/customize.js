@@ -50,14 +50,19 @@ $('#search-services')
 $('#search-button').click(function() {
   var service = $('#search-services').val();
   var query = $('#search-query').val();
-  window.open(searchServices[service].url + query, '_blank');
+  if ( query ) {
+    window.open(searchServices[service].url + query, '_blank');
+  };
 });
 
 $('#search-query').keyup(function( event ) {
   if (event.key == 'Enter') {
     var service = $('#search-services').val();
     var query = $('#search-query').val();
-    window.open(searchServices[service].url + query, '_blank');
+    console.log(query);
+    if ( query ) {
+      window.open(searchServices[service].url + query, '_blank');
+    };
   };
 });
 
